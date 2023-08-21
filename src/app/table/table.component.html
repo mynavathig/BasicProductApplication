@@ -1,0 +1,27 @@
+<div class="form-group">
+  <input type="search" class="form-control" [(ngModel)]="filter" placeholder="Filter by name or capital">
+</div>
+
+<table class="my-table">
+  <thead class="my-table headers">
+    <tr>
+      <th *ngFor="let column of config" sortable="name" (sort)="onSort($event)">{{column.header}}</th>
+    </tr>
+  </thead>
+  <tbody *ngIf = 'config' class="my-table body">
+    <tr my-active *ngFor="let row of data.data; index as rowIndex">
+      <td (click)="onSelect(rowIndex)" *ngFor="let column of config; index as i" [ngClass]="{last: i === (config.length - 1) }">{{row[column.value]}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="pag-space">
+  <button type="button" class="pag-button" (click)="changePage(0)"> << </button>
+  <button type="button" class="pag-button" (click)="changePage(this.pageNumber - 1)"> < </button>
+  <select class="size-page" [(ngModel)]="size" (change)="changePage(this.pageNumber)">
+    <option selected value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+  </select>
+  <button type="button" class="pag-button" (click)="changePage(this.pageNumber + 1)"> > </button>
+  <button type="button" class="pag-button" (click)="changePage(this.data.lastPage)"> >> </button>
+</div>

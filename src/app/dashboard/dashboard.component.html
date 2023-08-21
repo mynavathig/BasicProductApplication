@@ -1,0 +1,6 @@
+<my-table
+[config]="config$ | async"
+[data]="data$ | async"
+(newPage)="updateTable($event)"
+(selection)="goDetails($event)"
+></my-table>
