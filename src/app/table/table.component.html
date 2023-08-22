@@ -7,7 +7,7 @@
     </thead>
     <tbody *ngIf = 'config' class="my-table body">
       <tr my-active *ngFor="let row of data.data; index as rowIndex">
-        <td (click)="onSelect(rowIndex)" *ngFor="let column of config; index as i" [ngClass]="{last: i === (config.length - 1) }">{{row[column.value]}}</td>
+        <td (click)="onSelect(row)" *ngFor="let column of config; index as i" [ngClass]="{last: i === (config.length - 1) }">{{row[column.value]}}</td>
       </tr>
     </tbody>
   </table>
