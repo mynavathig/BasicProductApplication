@@ -1,11 +1,8 @@
-<div class="form-group">
-  <input type="search" class="form-control" [(ngModel)]="filter" placeholder="Filter by name or capital">
-</div>
 
 <table class="my-table">
   <thead class="my-table headers">
     <tr>
-      <th *ngFor="let column of config" sortable="name" (sort)="onSort($event)">{{column.header}}</th>
+      <th *ngFor="let column of config" (click)="onSortClick(column)">{{column.header}}</th>
     </tr>
   </thead>
   <tbody *ngIf = 'config' class="my-table body">

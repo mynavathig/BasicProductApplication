@@ -7,20 +7,17 @@ const routes: Routes = [
   { 
     path: '', 
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
-    // canLoad: [NoAuthGuard],
-    // canActivate: [NoAuthGuard] 
+    canActivate: [NoAuthGuard] 
   },
   { 
     path: 'login', 
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
-    // canLoad: [NoAuthGuard],
-    // canActivate: [NoAuthGuard] 
+    canActivate: [NoAuthGuard] 
   },
   { 
     path: 'dashboard', 
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
-    // canLoad: [AuthGuard],
-    // canActivate: [AuthGuard] 
+    canActivate: [AuthGuard] 
   },
 ];
 

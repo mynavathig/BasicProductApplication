@@ -8,9 +8,11 @@ import {
 ViewChildren,
 QueryList
 } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Product } from '../core/product';
 import { ProductList } from '../core/productList';
 import { compare, SortableHeaderDirective, SortEvent } from '../core/sortable-header.directive';
+import { ProductService } from '../_services/product.service';
 
 import { Config } from './config';
 import { DataTable } from './data';
@@ -24,7 +26,7 @@ import { PageRequest } from './pageRequest';
   encapsulation: ViewEncapsulation.None
 })
 export class MyTableComponent {
-  filter?: string;
+
   @Input()
   public config?: Config = [];
 
@@ -39,6 +41,7 @@ export class MyTableComponent {
   public pageNumber = 0;
   productData: Array<any> = ProductList;
   products: Array<Product> = ProductList;
+  
 
   @Output()
   public newPage: EventEmitter<PageRequest> = new EventEmitter<PageRequest>();
@@ -46,29 +49,12 @@ export class MyTableComponent {
   @Output()
   public selection: EventEmitter<number> = new EventEmitter<number>();
 
-  @ViewChildren(SortableHeaderDirective)
-  headers?: QueryList<SortableHeaderDirective>;
+  @Output()
+  public sort: EventEmitter<any> = new EventEmitter<any>();
 
-  onSort({ column, direction }: SortEvent) {
-    
-    // resetting other headers
-    this.headers?.forEach((header) => {
-      if (header.sortable !== column) {
-        header.direction = '';
-      }
-    });
+  constructor() { }
 
-    // sorting products
-    if (direction === '' || column === '') {
-      this.products = this.productData;
-    } else {
-      this.products = [...this.productData].sort((a, b) => {
-        const res = compare(a[column], b[column]);
-        this.data.data = this.products;
-        console.log(direction,this.products);
-        return direction === 'asc' ? res : -res;
-      });
-    }
+  ngOnInit() {
   }
 
   public changePage(pageNum: number) {
@@ -81,6 +67,10 @@ export class MyTableComponent {
       page: num,
       size: Number(this.size)
     });
+  }
+  
+  public onSortClick(data: any){
+    this.sort.emit(data);
   }
 
   public onSelect (index: number) {

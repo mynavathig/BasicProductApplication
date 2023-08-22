@@ -11,6 +11,8 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { ProductService } from './_services/product.service';
+import { AuthGuard } from './_helpers/auth.guard';
+import { NoAuthGuard } from './_helpers/noAuth.guard';
 
 @NgModule({
   imports: [
@@ -32,7 +34,9 @@ import { ProductService } from './_services/product.service';
       provide: HTTP_INTERCEPTORS, useClass: HttpResponseInterceptor, multi:true,
     },
     fakeBackendProvider,
-    ProductService
+    ProductService,
+    AuthGuard,
+    NoAuthGuard
 ],
 })
 export class AppModule { }

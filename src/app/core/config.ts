@@ -1,19 +1,27 @@
-export const configColumns = [{
-  header: "ID",
-  value: "id"
-}, {
+export const configColumns = [
+{
   header: "Name",
-  value: "name"
+  value: "name",
+  sort: "asc",
+  isCurrent: 1
 }, {
   header: "Type",
-  value: "type"
+  value: "type",
+  sort: "asc",
+  isCurrent: 0
 }, {
   header: "Price",
-  value: "price"
+  value: "price",
+  sort: "asc",
+  isCurrent: 0
 }, {
   header: "Units",
-  value: "units"
+  value: "units",
+  sort: "asc",
+  isCurrent: 0
 }, {
   header: "Manufacturing",
-  value: "manufacturing"
+  value: "manufacturing",
+  sort: "asc",
+  isCurrent: 0
 }];

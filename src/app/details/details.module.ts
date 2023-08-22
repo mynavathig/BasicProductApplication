@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     DetailsRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   declarations: [ DetailsComponent ]
 })

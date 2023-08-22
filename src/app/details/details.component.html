@@ -4,12 +4,6 @@
 <div class="col-md-4 m-5 pb-5">
   <form [formGroup]="updateProductForm" (ngSubmit)="updateProductDetail()">
     <div class="form-group">
-      <label>ID : </label>
-      <input type="text" class="form-control" formControlName="id" placeholder="Enter product Id">
-      <span class="warning" *ngIf="updateProductForm.controls['id'].errors?.required">
-        *Product Id is required </span>
-    </div>
-    <div class="form-group">
       <label>Name : </label>
       <input type="text" class="form-control" formControlName="name" placeholder="Enter product name">
       <span class="warning" *ngIf="updateProductForm.controls['name'].errors?.required">
@@ -39,5 +33,3 @@
     <button type="submit" [disabled]="!updateProductForm.valid" class="btn btn-primary">Update Product</button>
   </form>
 </div>
-
-{{updateProductForm.value | json}}
