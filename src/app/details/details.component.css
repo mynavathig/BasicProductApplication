@@ -1,0 +1,22 @@
+.productForm {
+  margin-left: 50px;
+}
+
+.product {
+  margin-left: 100px;
+}
+
+.form-group {
+  position: relative;
+  margin: 10px;
+}
+
+.btn-update {
+  margin-left: 150px;
+  margin-top: 25px;
+}
+
+.btn-reset {
+  margin-top: 25px;
+  margin-left: 10px;
+}

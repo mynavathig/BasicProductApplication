@@ -1,0 +1,16 @@
+/* .btnlogout {
+  position: relative;
+  margin-left: 370px;
+  margin-top: 10px;
+} */
+
+.form-group {
+  position: relative;
+  margin-top: -18px;
+  margin-bottom: 8px;
+  margin-left: 370px;
+}
+
+.dashboard {
+  margin-left: 200px;
+}

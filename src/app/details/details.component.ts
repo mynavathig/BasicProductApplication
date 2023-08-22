@@ -7,7 +7,8 @@ import { ProductService } from '../_services/product.service';
 
 @Component({
   selector: 'my-details',
-  templateUrl: 'details.component.html'
+  templateUrl: 'details.component.html',
+  styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
 
@@ -46,6 +47,7 @@ export class DetailsComponent {
   }
 
   updateProductDetail() {
+    this._apiService.isSaved = true;
     this._apiService.updateProductList(this.updateProductForm.value).subscribe(response =>{
       this.router.navigate(['/dashboard']);
     });

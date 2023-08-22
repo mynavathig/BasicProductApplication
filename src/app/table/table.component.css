@@ -44,3 +44,12 @@ select.size-page {
   text-align-last: center;
   cursor: pointer;
 }
+
+.container {
+  overflow-x: auto;
+}
+
+tr>th:first-child,tr>td:first-child {
+  position: sticky;
+  left: 0;
+}

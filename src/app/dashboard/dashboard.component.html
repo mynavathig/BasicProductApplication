@@ -1,7 +1,8 @@
+<h3 class="dashboard">Dashboard</h3>
 <form [formGroup]="filterForm">
-  <div>
-    <input type="button" value="Logout" (click)="logout()">
-  </div>
+  <button (click)="logout()">
+    Logout
+</button>
   <div class="form-group">  
     <input type="search" class="form-control" formControlName="filter" placeholder="Filter by name or type">
   </div>

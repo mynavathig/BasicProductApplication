@@ -1,7 +1,7 @@
 <a routerLink='/dashboard'>Back to Product List</a><br/>
 
-<h1>Product selected</h1>
-<div class="col-md-4 m-5 pb-5">
+<h3 class="product">Product selected</h3>
+<div class="productForm">
   <form [formGroup]="updateProductForm" (ngSubmit)="updateProductDetail()">
     <div class="form-group">
       <label>Name : </label>
@@ -29,7 +29,7 @@
       <input type="text" class="form-control" formControlName="manufacturing" placeholder="Enter manufacturing date">
     </div>
 
-    <button type="reset" class="btn btn-warning mr-1">Reset</button>
-    <button type="submit" [disabled]="!updateProductForm.valid" class="btn btn-primary">Update Product</button>
+    <button type="reset" class="btn-reset">Reset</button>
+    <button type="submit" [disabled]="!updateProductForm.valid" class="btn-update">Update Product</button>
   </form>
 </div>

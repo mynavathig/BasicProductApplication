@@ -1,0 +1,19 @@
+.card-header{
+  position: relative;
+  margin-left: 150px;
+}
+
+.form-control {
+  position: relative;
+  margin: 10px 10px 5px;
+}
+
+.form-label {
+  position: relative;
+  margin: 10px 40px 5px;
+}
+
+.loginbtn {
+  position: relative;
+  margin: 30px 150px;
+}

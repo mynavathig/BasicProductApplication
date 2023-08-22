@@ -10,7 +10,7 @@ import { configColumns } from '../core/config';
 export class ProductService {
   product?: Product;
   productListData: Product[] = ProductList;
-  viewProductId!: number;
+  isSaved = false;
   public getConfig(): Config {
     return configColumns;
   }

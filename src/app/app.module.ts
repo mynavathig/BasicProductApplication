@@ -13,6 +13,7 @@ import { fakeBackendProvider } from './_helpers/fake-backend';
 import { ProductService } from './_services/product.service';
 import { AuthGuard } from './_helpers/auth.guard';
 import { NoAuthGuard } from './_helpers/noAuth.guard';
+import { CanDeactivateGuard } from './_helpers/canDeactivate.guard';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { NoAuthGuard } from './_helpers/noAuth.guard';
     fakeBackendProvider,
     ProductService,
     AuthGuard,
-    NoAuthGuard
+    NoAuthGuard,
+    CanDeactivateGuard
 ],
 })
 export class AppModule { }
