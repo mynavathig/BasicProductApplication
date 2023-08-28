@@ -33,7 +33,7 @@ export class MyTableComponent {
   public size = 5;
   public pageNumber = 0;
   productData: Array<any> = ProductList;
-  products: Array<Product> = ProductList;
+  products: Array<any> = ProductList;
 
   @Output()
   public newPage: EventEmitter<PageRequest> = new EventEmitter<PageRequest>();

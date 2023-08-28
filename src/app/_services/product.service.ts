@@ -65,7 +65,10 @@ export class ProductService {
         value.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1;
       const typeFound =
         value.type.toLowerCase().indexOf(searchString.toLowerCase()) !== -1;
-      if (nameFound || typeFound) {
+      const priceFound = value.price.toString().toLowerCase().indexOf       (searchString.toLowerCase()) !== -1;
+      const unitsFound = value.units.toString().toLowerCase().indexOf   (searchString.toLowerCase()) !== -1;
+      const dateFound = value.manufacturing.toString().toLowerCase().indexOf   (searchString.toLowerCase()) !== -1;
+      if (nameFound || typeFound || priceFound || unitsFound || dateFound) {
         return value;
       }
     });
